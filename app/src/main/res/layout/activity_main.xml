@@ -45,21 +45,39 @@
                 android:textColor="#AAAAAA"
                 android:layout_marginBottom="10dp" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ir a coordenadas (lat, lng)"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:orientation="horizontal"
                 android:layout_marginBottom="10dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_coords"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:imeOptions="actionSearch"
-                    android:textColor="@color/white"
-                    android:textColorHint="#777777" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="lat, lng  (ej: 40.4168, -3.7038)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_marginEnd="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_coords"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:textColor="@color/white"
+                android:textColorHint="#777777" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_go_coords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ir"
+                style="@style/Widget.MaterialComponents.Button"
+                android:backgroundTint="@color/blue_primary"
+                android:textColor="@color/white" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_timer"

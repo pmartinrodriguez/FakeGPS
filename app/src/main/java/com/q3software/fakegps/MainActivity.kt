@@ -106,6 +106,10 @@ class MainActivity : AppCompatActivity() {
                 true
             } else false
         }
+        // Botón para ir a las coordenadas
+        binding.btnGoCoords.setOnClickListener {
+            parseAndGoToCoords(binding.etCoords.text.toString())
+        }
 
         // Timer
         binding.sliderTimer.addOnChangeListener { _, value, _ ->

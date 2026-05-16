@@ -240,21 +240,18 @@ class MainActivity : AppCompatActivity() {
     // --- Checks ---
     private fun isMockLocationEnabled(): Boolean {
         return try {
-            val mockLocation = Settings.Secure.getString(
-                contentResolver, Settings.Secure.ALLOW_MOCK_LOCATION
-            )
-            mockLocation == "1"
-        } catch (e: Exception) {
-            // En Android 6+ se verifica de otra forma
             val lm = getSystemService(LOCATION_SERVICE) as LocationManager
-            try {
-                lm.addTestProvider(LocationManager.GPS_PROVIDER, false, false, false,
-                    false, true, true, true, 0, 5)
-                lm.removeTestProvider(LocationManager.GPS_PROVIDER)
-                true
-            } catch (se: SecurityException) {
-                false
-            }
+                lm.addTestProvider(
+                LocationManager.GPS_PROVIDER,
+                false, false, false, false,
+                true, true, true, 0, 5
+            )
+            lm.removeTestProvider(LocationManager.GPS_PROVIDER)
+            true
+        } catch (se: SecurityException) {
+            false
+        } catch (e: Exception) {
+            true
         }
     }
 

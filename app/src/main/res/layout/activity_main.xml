@@ -23,7 +23,9 @@
         android:paddingTop="16dp"
         android:paddingBottom="24dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        app:behavior_peekHeight="260dp"
+        app:behavior_peekHeight="320dp"
+        app:behavior_fitToContents="false"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         app:behavior_hideable="false">
 
         <View
